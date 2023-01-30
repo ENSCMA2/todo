@@ -1,3 +1,4 @@
+<!-- #Component -->
 <!-- components/NewTodo.svelte -->
 <script lang='ts'>
   import { createEventDispatcher, onMount } from 'svelte'

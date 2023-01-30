@@ -1,3 +1,4 @@
+<!-- #Component -->
 <!-- components/TodosStatus.svelte -->
 <script lang='ts'>
   import type { TodoType } from "../types/todo.type"

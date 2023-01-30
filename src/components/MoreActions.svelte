@@ -1,3 +1,4 @@
+<!-- #Component -->
 <!-- components/MoreActions.svelte -->
 <script lang='ts'>
   import { createEventDispatcher } from 'svelte'
@@ -20,6 +21,7 @@
 </script>
 
 <div class="btn-group">
+  <!-- #controlFlow (the question mark checks or unchecks depending on whether completed is true) -->
   <button type="button" class="btn btn__primary" 
     disabled={todos.length === 0} on:click={checkAll}>{completed ? 'Check' : 'Uncheck'} all</button>
   <button type="button" class="btn btn__primary" 

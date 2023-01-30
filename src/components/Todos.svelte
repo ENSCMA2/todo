@@ -1,5 +1,7 @@
+<!-- #Component -->
 <!-- components/Todos.svelte -->
 <script lang='ts'>
+  // #Component - importing and applying other components here
   import FilterButton from './FilterButton.svelte'
   import Todo from './Todo.svelte'
   import MoreActions from './MoreActions.svelte'
@@ -19,6 +21,7 @@
 
   function addTodo(name: string) {
     todos = [...todos, { id: newTodoId, name, completed: false }]
+    // #Format
     $alert = `Todo '${name}' has been added`
   }
 
@@ -30,12 +33,16 @@
 
   function updateTodo(todo: TodoType) {
     const i = todos.findIndex(t => t.id === todo.id)
+    // #Format
     if (todos[i].name !== todo.name)            $alert = `todo '${todos[i].name}' has been renamed to '${todo.name}'`
     if (todos[i].completed !== todo.completed)  $alert = `todo '${todos[i].name}' marked as ${todo.completed ? 'completed' : 'active'}`
     todos[i] = { ...todos[i], ...todo }
   }
 
+
+  // #Properties - technically an enum but we are accessing them from the filter.enum.ts file so the concept is similar
   let filter: Filter = Filter.ALL
+  // #controlFlow - question mark syntax
   const filterTodos = (filter: Filter, todos: TodoType[]) => 
     filter === Filter.ACTIVE ? todos.filter(t => !t.completed) :
     filter === Filter.COMPLETED ? todos.filter(t => t.completed) : 

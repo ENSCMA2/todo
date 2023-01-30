@@ -37,6 +37,7 @@
 
 <style>
 div {
+  /* #Properties - of style for this component */
   position: fixed;
   cursor: pointer;
   margin-right: 1.5rem;
@@ -46,8 +47,8 @@ div {
   display: flex;
   align-items: center;
   border-radius: 0.2rem;
-  background-color: #565656;
-  color: #fff;
+  background-color: #565600;
+  color: #ffff00;
   font-size: 1rem;
   font-weight: 700;
   padding: 0.5rem 1.4rem;
@@ -56,7 +57,7 @@ div {
   opacity: 100%;
 }
 div p {
-  color: #fff;
+  color: #00ff00;
 }
 div svg {
   height: 1.6rem;
