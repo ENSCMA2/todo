@@ -6,6 +6,7 @@
   export let filter: Filter = Filter.ALL
 </script>
 
+<!-- this code displays the All, Active, and Completed buttons -->
 <div class="filters btn-group stack-exception">
   <button class="btn toggle-btn" class:btn__primary={filter === Filter.ALL} aria-pressed={filter === Filter.ALL} on:click={()=> filter = Filter.ALL} >
     <span class="visually-hidden">Show</span>
@@ -24,6 +25,7 @@
   </button>
 </div>
 
+<!-- I added this code to style the buttons -->
 <style>
 
 .btn.toggle-btn {

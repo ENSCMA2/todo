@@ -7,6 +7,7 @@ import type { TodoType } from './types/todo.type'
 // #Reactive - can change alert depending on user actions
 export const alert = writable<string>('Welcome to the To-Do list app!')
 
+// create initial to-do list that you see when you run at first
 const initialTodos: TodoType[] = [
   // #Properties - defined in TodoType.ts
   { id: 1, name: 'Visit MDN web docs', completed: true },

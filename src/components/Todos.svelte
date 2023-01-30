@@ -19,18 +19,21 @@
 
   $: newTodoId = todos.length > 0 ? Math.max(...todos.map(t => t.id)) + 1 : 1
 
+  // what to do when the user adds a to-do item
   function addTodo(name: string) {
     todos = [...todos, { id: newTodoId, name, completed: false }]
     // #Format
     $alert = `Todo '${name}' has been added`
   }
 
+  // what to do when the user deletes a to-do item
   function removeTodo(todo: TodoType) {
     todos = todos.filter(t => t.id !== todo.id)
     todosStatus.focus()             // give focus to status heading
     $alert = `Todo '${todo.name}' has been deleted`
   }
 
+  // what to do when the user updates a to-do item
   function updateTodo(todo: TodoType) {
     const i = todos.findIndex(t => t.id === todo.id)
     // #Format
@@ -41,6 +44,7 @@
 
 
   // #Properties - technically an enum but we are accessing them from the filter.enum.ts file so the concept is similar
+  // this function filters the to-do items depending on their status and the filter button clicked
   let filter: Filter = Filter.ALL
   // #controlFlow - question mark syntax
   const filterTodos = (filter: Filter, todos: TodoType[]) => 

@@ -14,7 +14,7 @@
   let editButtonPressed = false           // track if edit button has been pressed, to give focus to it after cancel or save
 
   let name = todo.name                    // hold the name of the todo being edited
-
+  // functions to handle updating, editing, saving edits, canceling edits, deleting, completing, and un-completing to-dos
   function update(updatedTodo: Partial<TodoType>) {
     todo = { ...todo, ...updatedTodo }    // applies modifications to todo
     dispatch('update', todo)              // emit update event
@@ -69,12 +69,14 @@
   </form>
 {:else}
   <!-- markup for displaying todo: checkbox, label, Edit and Delete Button -->
+  <!-- this section renders the checkbox and label -->
   <div class="c-cb">
     <input type="checkbox" id="todo-{todo.id}"
       on:click={onToggle} checked={todo.completed}
     >
     <label for="todo-{todo.id}" class="todo-label">{todo.name}</label>
   </div>
+  <!-- this section renders the Edit and Delete buttons -->
   <div class="btn-group">
     <button type="button" class="btn edit" on:click={onEdit} use:focusEditButton>
       Edit<span class="visually-hidden"> {todo.name}</span>
@@ -88,6 +90,7 @@
 
 <style> 
   /* #Properties of edit and delete buttons */
+  /* I added this for funsies */
   button.edit {
     color: #0000ff;
     font-weight: bold;

@@ -26,6 +26,8 @@
 
 </script>
 
+<!-- this section renders the to-do input form at the top of the app -->
+<!-- the Add button only lights up if the user has typed something in -->
 <form on:submit|preventDefault={addTodo} on:keydown={e => e.key === 'Escape' && onCancel()}>
   <h2 class="label-wrapper">
     <label for="todo-0" class="label__lg">What needs to be done?</label>

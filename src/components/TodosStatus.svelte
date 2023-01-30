@@ -14,4 +14,5 @@
 
 </script>
 
+<!-- this renders the number of tasks the user has completed -->
 <h2 id="list-heading" bind:this={headingEl} tabindex="-1">{completedTodos} out of {totalTodos} items completed</h2>
