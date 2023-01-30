@@ -76,7 +76,7 @@
     <label for="todo-{todo.id}" class="todo-label">{todo.name}</label>
   </div>
   <div class="btn-group">
-    <button type="button" class="btn" on:click={onEdit} use:focusEditButton>
+    <button type="button" class="btn edit" on:click={onEdit} use:focusEditButton>
       Edit<span class="visually-hidden"> {todo.name}</span>
     </button>
     <button type="button" class="btn btn__danger" on:click={onRemove}>
@@ -85,3 +85,23 @@
   </div>
 {/if}
 </div>
+
+<style> 
+  /* #Properties of edit and delete buttons */
+  button.edit {
+    color: #0000ff;
+    font-weight: bold;
+    border-width: 12px
+  }
+
+  button.btn__danger {
+    font-weight: bold;
+    border-width: 10px;
+    border-color: #d0f011
+  }
+
+  div.c-cb {
+    color: #ff0000;
+    font-weight: bold
+  }
+</style>
